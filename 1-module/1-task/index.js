@@ -6,11 +6,12 @@
 function factorial(n) {
   if (n === 0 || n === 1) {
     return 1;
-  } else {
-    do {
-      n = n * (n - 1) ;
-    }
-    while (n > 1);
-    return console.log(n + '! = ', factorial(n));
   }
+
+  let box = n;
+  while (n - 1) {
+    box *= --n ;
+  }
+  return box;
+
 }
