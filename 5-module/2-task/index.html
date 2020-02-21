@@ -67,10 +67,9 @@
 
         let table = new SortableTable(rows);
         document.querySelector('.result').appendChild(table.el);
-
     </script>
 
-    <button onclick="table.sort(0)">По имени</button>
-    <button onclick="table.sort(2)">По зарплате</button>
+    <button onclick="table.sort(0, true)">По имени</button>
+    <button onclick="table.sort(2,true)">По зарплате</button>
 </body>
 </html>
