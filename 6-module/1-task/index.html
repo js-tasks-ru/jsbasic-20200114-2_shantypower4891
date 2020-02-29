@@ -73,15 +73,7 @@
 
         let table = new ClearedTable(rows);
         document.querySelector('.result').appendChild(table.el);
-        table.el.onclick = function(event) {
-          let target = event.target;
-          let id = target.getAttribute('data-id');
-          if (!id) {
-            return;
-          }
-          table.onRemoved(id);
-        }
-
+        
     </script>
 </body>
 </html>
