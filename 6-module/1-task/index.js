@@ -24,10 +24,8 @@ class ClearedTable {
     this.el.insertAdjacentHTML("beforeend", tbody);
     this.colProperty = ["id", "name", "age", "salary", "city"];
     const id = this.colProperty[0];
-    //this.render(id);
     const body = this.el.querySelector("tbody");
-    //body.innerHTML = "";
-    //const place = desc ? 'afterbegin' : 'beforeend';
+
 
     for (let person of this.data) {
       let name = `<td>${person.name}</td>`;
@@ -55,24 +53,6 @@ class ClearedTable {
 
     this.onRemoved(parseInt(id, 10));
   }
-
-/*   render(id) {
-    const body = this.el.querySelector("tbody");
-    body.innerHTML = "";
-    //const place = desc ? 'afterbegin' : 'beforeend';
-
-    for (let person of this.data) {
-      let name = `<td>${person.name}</td>`;
-      let age = `<td>${person.age}</td>`;
-      let salary = `<td>${person.salary}</td>`;
-      let city = `<td>${person.city}</td>`;
-      let closebtn = `<td><a data-id="${person.id}" href="#delete">X</a></td>`;
-      let tr = name + age + salary + city + closebtn;
-      if (id != person.id) {
-        body.insertAdjacentHTML("beforeend", tr);
-      }
-    }
-  } */
 
   /**
    * Метод который вызывается после удалении строки
