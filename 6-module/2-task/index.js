@@ -24,7 +24,7 @@ class Carousel {
   constructor(element) {
     this.el = element;
     this.el.innerHTML = this.insertCarouselTemplate();
-    this.slidesContainer = document.querySelector('.carousel-inner');
+    this.slidesContainer = this.el.querySelector('.carousel-inner');
     this.slidesContainer.innerHTML = this.insertSlideTemplate(this.slides[0]);
     this.el.querySelectorAll('.carousel-indicator')[0].classList.add('active');
     this.onNextClick();
