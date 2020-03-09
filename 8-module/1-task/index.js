@@ -6,12 +6,6 @@ class ProductList {
     this.el = element;
     this.el.innerHTML = this.insertProductsContainer();
     this.productsContainer = this.el.querySelector('.homepage-cards');
-/*     const productsInCart = localStorage.getItem(this.productsStoreKey);
-    console.log('productsInCart', productsInCart);
-    if (productsInCart) {
-      this.cartProducts = JSON.parse(productsInCart);
-      console.log('cart', this.cartProducts);
-    } */
   }
 
   insertProductsContainer() {
