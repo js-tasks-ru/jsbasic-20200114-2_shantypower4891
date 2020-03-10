@@ -86,25 +86,26 @@ class ProductList {
           productItem += this.insertProductItem(item);
         }
         this.productsContainer.innerHTML = productItem;
-        const productsInCart = localStorage.getItem(this.productsStoreKey);
-        console.log('productsInCart', productsInCart);
-        if (productsInCart) {
-          this.cartProducts = JSON.parse(productsInCart);
-          console.log('cartProducts', this.cartProducts);
-        }
-        let cart = this.cartProducts;
-        if (cart == null) {
-          cart = [];
-        }
+
+
+        const productsInCartStr = localStorage.getItem(this.productsStoreKey);
+        console.log('productsInCart', productsInCartStr);
+        const productsInCartArray = JSON.parse(productsInCartStr) || [];
+        console.log('productsInCartArray', productsInCartArray);
+        let cart = productsInCartArray;
+
         this.productsContainer.addEventListener('click', event => {
           if (event.target.dataset.buttonRole === 'add-to-cart' && confirm('Вы уверенны, что хотите добавить этот товар в корзину?')) {
             let productId = +event.target.closest('[data-product-id]').dataset.productId;
 
-            if (!cart.find(id => id === productId)) {
-              cart.push(productId);
-            } else {
+            let isAlreadyAdded = productsInCartArray.some((product) => product.id === productId);
+            if (isAlreadyAdded) {
               alert('Этот товар уже добавлен в корзину!');
+              return;
             }
+
+            let productToAdd = this.products.find((product) => product.id === productId);
+            cart.push(productToAdd);
             localStorage.setItem(this.productsStoreKey, JSON.stringify(cart));
           }
         });
