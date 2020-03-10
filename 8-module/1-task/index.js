@@ -58,7 +58,7 @@ class ProductList {
     let productHtml = `<div data-product-id="${product.id}" class="products-list-product col-md-6 col-lg-4 mb-4">
     <div class="card">
         <div class="card-img-wrap">
-            <img class="card-img-top" src="https://iliakan.github.io/course-project/assets/images/turntable.png" alt="Card image cap">
+            <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
         </div>
         <div class="card-body">
             <h5 class="card-title">${product.title}</h5>
