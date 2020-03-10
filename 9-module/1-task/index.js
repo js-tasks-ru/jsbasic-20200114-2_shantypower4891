@@ -63,7 +63,7 @@ class CheckoutProductList {
       <div class="rate">` +
       this.insertRatingHtml(product) +
       `</div>
-    </div>`+
+    </div>` +
     this.insertProductPrice(product) +
     `<div class="product-remove-button-wrapper">
       <button type="button"
@@ -89,7 +89,7 @@ class CheckoutProductList {
       }
     }
     if (product.rating !== null) {
-      starTemplate += `<p class="rate-amount d-none d-md-block mt-1">${product.rating.reviewsAmount}</p>`
+      starTemplate += `<p class="rate-amount d-none d-md-block mt-1">${product.rating.reviewsAmount}</p>`;
     }
     return starTemplate;
   }

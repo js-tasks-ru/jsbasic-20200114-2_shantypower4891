@@ -49,7 +49,7 @@ class ProductList {
       }
     }
     if (product.rating !== null) {
-      starTemplate += `<span class="rate-amount ml-2">${product.rating.reviewsAmount}</span>`
+      starTemplate += `<span class="rate-amount ml-2">${product.rating.reviewsAmount}</span>`;
     }
     return starTemplate;
   }
